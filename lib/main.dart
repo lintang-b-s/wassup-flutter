@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wassup/providers/auth_notifier.dart';
 import 'package:wassup/screens/Tes.dart';
 import 'package:wassup/screens/auth.dart';
+import 'package:wassup/screens/chats.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -38,7 +39,7 @@ class MyApp extends ConsumerWidget {
               seedColor: const Color.fromARGB(255, 255, 255, 255)),
           useMaterial3: true,
         ),
-        home: authState ? AuthScreenTes() : AuthScreen());
+        home: authState ? ChatsScreen() : AuthScreen());
   }
 }
 
