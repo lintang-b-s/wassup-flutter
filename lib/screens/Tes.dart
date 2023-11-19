@@ -1,142 +1,144 @@
-import 'package:flutter/material.dart';
+// Row(
+//                           mainAxisSize: MainAxisSize.max,
+//                           mainAxisAlignment: MainAxisAlignment.start,
+//                           children: [
+//                             // Align(
+//                             //   alignment: AlignmentDirectional(0.00, 0.00),
+//                             //   child:
+//                             //    Container(
+//                             //     width: 53.0,
+//                             //     height: 100.0,
+//                             //     decoration: BoxDecoration(
+//                             //       color: secondaryBackground,
+//                             //     ),
+//                             //     child: ButtonWidget(
+//                             //       onPressed: () {
+//                             //         print('Button pressed ...');
+//                             //       },
+//                             //       text: 'Button',
+//                             //       icon: Icon(
+//                             //         Icons.arrow_forward_ios,
+//                             //         color: primaryText,
+//                             //         size: 15.0,
+//                             //       ),
+//                             //       options: FFButtonOptions(
+//                             //         height: 0.0,
+//                             //         padding: EdgeInsetsDirectional.fromSTEB(
+//                             //             0.0, 0.0, 0.0, 0.0),
+//                             //         iconPadding: EdgeInsetsDirectional.fromSTEB(
+//                             //             0.0, 0.0, 0.0, 0.0),
+//                             //         color: primary,
+//                             //         textStyle: TextStyle(
+//                             //             color: Colors.white,
+//                             //             fontFamily: 'Readex Pro'),
 
-/// Flutter code sample for [NavigationBar].
-
-void main() => runApp(const NavigationBarApp());
-
-class NavigationBarApp extends StatelessWidget {
-  const NavigationBarApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
-      home: const NavigationExample(),
-    );
-  }
-}
-
-class NavigationExample extends StatefulWidget {
-  const NavigationExample({super.key});
-
-  @override
-  State<NavigationExample> createState() => _NavigationExampleState();
-}
-
-class _NavigationExampleState extends State<NavigationExample> {
-  int currentPageIndex = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-    return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        indicatorColor: Colors.amber,
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_sharp)),
-            label: 'Notifications',
-          ),
-          NavigationDestination(
-            icon: Badge(
-              label: Text('2'),
-              child: Icon(Icons.messenger_sharp),
-            ),
-            label: 'Messages',
-          ),
-        ],
-      ),
-      body: <Widget>[
-        /// Home page
-        Card(
-          shadowColor: Colors.transparent,
-          margin: const EdgeInsets.all(8.0),
-          child: SizedBox.expand(
-            child: Center(
-              child: Text(
-                'Home page',
-                style: theme.textTheme.titleLarge,
-              ),
-            ),
-          ),
-        ),
-
-        /// Notifications page
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.notifications_sharp),
-                  title: Text('Notification 1'),
-                  subtitle: Text('This is a notification'),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.notifications_sharp),
-                  title: Text('Notification 2'),
-                  subtitle: Text('This is a notification'),
-                ),
-              ),
-            ],
-          ),
-        ),
-
-        /// Messages page
-        ListView.builder(
-          reverse: true,
-          itemCount: 2,
-          itemBuilder: (BuildContext context, int index) {
-            if (index == 0) {
-              return Align(
-                alignment: Alignment.centerRight,
-                child: Container(
-                  margin: const EdgeInsets.all(8.0),
-                  padding: const EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.primary,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Text(
-                    'Hello',
-                    style: theme.textTheme.bodyLarge!
-                        .copyWith(color: theme.colorScheme.onPrimary),
-                  ),
-                ),
-              );
-            }
-            return Align(
-              alignment: Alignment.centerLeft,
-              child: Container(
-                margin: const EdgeInsets.all(8.0),
-                padding: const EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.primary,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Text(
-                  'Hi!',
-                  style: theme.textTheme.bodyLarge!
-                      .copyWith(color: theme.colorScheme.onPrimary),
-                ),
-              ),
-            );
-          },
-        ),
-      ][currentPageIndex],
-    );
-  }
-}
+                                
+//                             //         elevation: 0.0,
+//                             //         borderSide: BorderSide(
+//                             //           color: Colors.transparent,
+//                             //           width: 0.0,
+//                             //         ),
+//                             //         borderRadius: BorderRadius.circular(8.0),
+//                             //       ),
+//                             //     ),
+//                             //   ),
+//                             // ),
+//                              Padding(
+//                           padding: EdgeInsetsDirectional.fromSTEB(
+//                               0.0, 6.0, 0.0, 6.0),
+//                           child: Container(
+//                             width: 304.0,
+//                             height: 100.0,
+//                             decoration: BoxDecoration(
+//                               color: secondaryBackground,
+//                             ),
+//                             child: TextFormField(
+//                               controller: textController,
+//                               focusNode: textFieldFocusNode,
+//                               autofocus: true,
+//                               obscureText: false,
+//                               decoration: InputDecoration(
+//                                 labelText: 'ketik disini...',
+//                                 // labelStyle:
+//                                 //     labelMedium,
+//                                 // hintStyle:
+//                                 //     labelMedium,
+//                                 enabledBorder: OutlineInputBorder(
+//                                   borderSide: BorderSide(
+//                                     color: accent2,
+//                                     width: 2.0,
+//                                   ),
+//                                   borderRadius: BorderRadius.circular(28.0),
+//                                 ),
+//                                 focusedBorder: OutlineInputBorder(
+//                                   borderSide: BorderSide(
+//                                     color: Color(0x00000000),
+//                                     width: 2.0,
+//                                   ),
+//                                   borderRadius: BorderRadius.circular(28.0),
+//                                 ),
+//                                 errorBorder: OutlineInputBorder(
+//                                   borderSide: BorderSide(
+//                                     color: error,
+//                                     width: 2.0,
+//                                   ),
+//                                   borderRadius: BorderRadius.circular(28.0),
+//                                 ),
+//                                 focusedErrorBorder: OutlineInputBorder(
+//                                   borderSide: BorderSide(
+//                                     color: error,
+//                                     width: 2.0,
+//                                   ),
+//                                   borderRadius: BorderRadius.circular(28.0),
+//                                 ),
+//                                 filled: true,
+//                                 fillColor: Color(0xF6F2EFEF),
+//                                 suffixIcon: Icon(
+//                                   Icons.emoji_emotions,
+//                                   color: accent4,
+//                                 ),
+//                               ),
+//                               // style: bodyMedium,
+//                               // validator: _model.textControllerValidator
+//                               //     .asValidator(context),
+//                             ),
+//                           ),
+//                         ),
+//                             Container(
+//                               width: 40.0,
+//                               height: 100.0,
+//                               decoration: BoxDecoration(
+//                                 color: primary,
+//                                 border: Border.all(
+//                                   color: primary,
+//                                 ),
+//                               ),
+//                               child: ButtonWidget(
+//                                 onPressed: () {
+//                                   print('Button pressed ...');
+//                                 },
+//                                 text: '',
+//                                 icon: Icon(
+//                                   Icons.send,
+//                                   color: accent1,
+//                                   size: 24.0,
+//                                 ),
+//                                 options: FFButtonOptions(
+//                                   height: 0.0,
+//                                   padding: EdgeInsetsDirectional.fromSTEB(
+//                                       0.0, 0.0, 0.0, 0.0),
+//                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
+//                                       0.0, 0.0, 0.0, 0.0),
+//                                   color: primary,
+//                                   // textStyle: TextStyle(),
+//                                   elevation: 0.0,
+//                                   borderSide: BorderSide(
+//                                     color: Colors.white,
+//                                     width: 0.0,
+//                                   ),
+//                                   borderRadius: BorderRadius.circular(8.0),
+//                                 ),
+//                               ),
+//                             ),
+//                           ],
+//                         ),
